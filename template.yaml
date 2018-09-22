@@ -1,0 +1,20 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  sam-app
+  
+  Sample SAM Template for sam-app
+
+Globals:
+  Function:
+    Timeout: 5
+
+Resources:
+  MySpikeFuncFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: dist
+      Handler: main
+      Runtime: go1.x
+      MemorySize: 128
+      Timeout: 10
